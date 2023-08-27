@@ -43,7 +43,7 @@
         <img :src="user?.avatar_url" alt="No Image" />
         <div>
           <h3>{{ user?.name }}</h3>
-          <p>@{{ user?.login }}</p>
+          <p class="link">@{{ user?.login }}</p>
           <p>Joined {{ moment(user?.created_at).format("D MMM YYYY") }}</p>
         </div>
       </div>
@@ -55,15 +55,15 @@
       <div class="repository">
         <div class="repo">
           <p>Repos</p>
-          <p>{{ user?.public_repos }}</p>
+          <h6>{{ user?.public_repos }}</h6>
         </div>
         <div class="followers">
           <p>Followers</p>
-          <p>{{ user?.followers }}</p>
+          <h6>{{ user?.followers }}</h6>
         </div>
         <div class="following">
           <p>Following</p>
-          <p>{{ user?.following }}</p>
+          <h6>{{ user?.following }}</h6>
         </div>
       </div>
 
@@ -173,7 +173,9 @@ p {
   align-items: center;
   
 }
-
+.link{
+  color:rgb(96, 172, 243)
+}
 .noResults {
   font-size: 12px;
   color: red;
@@ -233,6 +235,14 @@ button {
 .bio {
   margin-top: 10px;
 }
+.bio p{
+  color:#4b6a9b;
+  font-size:13px;
+  font-style:normal;
+  font-weight:400;
+  line-height: 25px;
+
+}
 
 .repository {
   display: flex;
@@ -242,6 +252,19 @@ button {
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.repo h6,.followers h6,.following h6,.first h3{
+  color:black /*#4b6a9b*/;
+  text-align: center;
+  
+  font-size:18px;
+  font-style:normal;
+  font-weight: 900;
+  line-height:normal
+}
+.repository p{
+  font-size:bold
+}
+
 
 img {
   width: 100px;
@@ -372,10 +395,19 @@ img {
   height: 30%;
 }
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:1024px){
   .down{
     display:flex;
     flex-direction: row;
   }
+  .repo h6,.followers h6,.following h6,.first h3{
+  color:black /*#4b6a9b*/;
+  text-align: center;
+  
+  font-size:24px;
+  font-style:normal;
+  font-weight: 900;
+  line-height:normal
+}
 }
 </style>
